@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="980" height="150" src="./github_header.png">
+  <img width="888" height="150" src="./github_header.png">
 </div>
 
 # qcpu
