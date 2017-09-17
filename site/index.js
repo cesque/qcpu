@@ -13,8 +13,6 @@ var output = {
 
 ///////////////////////////
 
-
-
 let CPU = require('../cpu.js')
 let Assembler = require('../assembler.js')
 
