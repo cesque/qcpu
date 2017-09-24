@@ -65,26 +65,24 @@ loadSamples: ((callback) => {
   ]
 
   for (let name of sampleNames) {
-    let oReq = new XMLHttpRequest()
-    oReq.addEventListener('load', function () {
+    fetch('../files/' + name)
+    .then(response => response.text())
+    .then(data => {
       console.log('loaded ' + name)
       samples.push({
         name: name,
-        code: this.responseText,
+        code: data,
       })
-
-      if(samples.length == sampleNames.length) callback()
+      if (samples.length == sampleNames.length) callback()
     })
-    oReq.open('GET', '../files/' + name)
-    oReq.send()
   }
 })(() => {
   console.log('loaded all samples')
   let editor = document.querySelector("#editor")
-  editor.textContent = samples.find(x => x.name == 'colortest.qasm').code
+  editor.textContent = samples.find(x => x.name == 'bitcount.asm').code
 })
 
-document.addEventListener("DOMContentLoaded", function (event) { 
+document.addEventListener("DOMContentLoaded", function (event) {
   output = new Vue(output)
   document.querySelector("#run-button").addEventListener("click", run)
 })

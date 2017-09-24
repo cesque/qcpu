@@ -90,7 +90,7 @@ cpu.provide(0x7, c => {
   inputIndex++
 })
 cpu.provide(0xB, c => currentColor = colorFns[c.registers.x])
-cpu.provide(0xC, c => {currentBackground = bgColorFns[c.registers.x]})
+cpu.provide(0xC, c => currentBackground = bgColorFns[c.registers.x])
 cpu.provide(0xF, c => {
   var offset = 0
   var s = ''
