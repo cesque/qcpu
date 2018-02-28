@@ -8,6 +8,7 @@ read_program_in:
   -: #read program in
     sys 7
     jeq read_program_end x 0
+    jeq read_program_end x .text('*')
     jeq + x .text('<')
     jeq + x .text('>')
     jeq + x .text('+')
