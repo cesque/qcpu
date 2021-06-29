@@ -90,3 +90,12 @@ The `sys` opcode allows for the CPU to call implementation-specific functions. A
 | `sys 15` | writes the current memory contents to a text file |
 
 This allows for **qcpu** to be used for different purposes, as the syscalls provided by different uses of the CPU can be as complex and varied as desired. A maximum number of 65535 syscalls can be provided. 
+
+## Using the assembler
+
+`assembler.js` contains an assembler which will conver from
+a bespoke version of assembly to a binary file which can be
+loaded by `run.js`. Currently this version of assembly is
+not documented, but you can look at the provided examples
+in `files/` to be able to see how it works. The assembler
+can be called with `node asm filename.asm`, and will output binary files to `bin/`.
